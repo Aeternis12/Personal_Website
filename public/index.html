@@ -1,22 +1,160 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Landon Martin Profile Site</title>
+    <title>Landon Martin Portfolio</title>
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
     <header>
       <h1>Landon Martin</h1>
       <nav>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="contact.html">Contact Me</a></li>
+          <li><a class="active" href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
     </header>
-    <footer></footer>
+    <main>
+      <section id="about">
+        <h2 class="sectionTitle">About Me</h2>
+        <figure name="Picture of Landon Martin">
+          <img
+            src="/public/images/me.jpg"
+            width="200"
+            id="selfie"
+            alt="A man taking a selfie with a river in the background."
+          />
+          <figcaption>Me in Paris along the Seine River. Fall 2022</figcaption>
+        </figure>
+        <p>
+          I first came into Florida State University as a
+          <em>history major.</em> My love of the past, and why the numerous
+          things today are the way they are drove me to study history for the
+          beginning two years of college. However, I came to realize that my
+          love of history aligned better with being a hobby than a career.
+        </p>
+
+        <p>
+          My second choice was always Computer Science. I love puzzling through
+          bugs, and seeing a project come together from nothing. I am
+          particularly interested in Web Development, and enjoy putting together
+          personal projects that feel actually useful. I am also interested in
+          game development, having worked with a group to make a cloned version
+          of the famous Bloon Tower Defense game.
+        </p>
+        <p>
+          Finally I do like Cybersecurity as a topic. In a world that is
+          sacrificing more and more privacy and security for convenience, being
+          somehow who knows how to configure and protect the projects I create
+          is an
+          <strong>Immensely</strong>
+          useful tool.
+        </p>
+      </section>
+
+      <div class="projectsAndSkills">
+        <section id="skills">
+          <h2>My Skills</h2>
+          <ul>
+            <li>Project Mangement and Leadership</li>
+            <li>Proficient in Java, C, C++, C#, and Python</li>
+            <li>Knowledgeable on Backend Databases and REST API management</li>
+            <li>Proficient in .NET MAUI and XAML</li>
+            <li>Capable of large writing projects</li>
+          </ul>
+        </section>
+
+        <section id="projects">
+          <h2>Projects</h2>
+          <table>
+            <thead>
+              <tr>
+                <th width="100">Project Name</th>
+                <th width="200">Project Description</th>
+                <th width="100">Project Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr align="center">
+                <td>Fake Asana</td>
+                <td>
+                  A scaled down and barebones clone of the Asana project
+                  management app, done in .NET MAUI.
+                </td>
+                <td>Complete (can refine)</td>
+              </tr>
+              <tr align="center">
+                <td>Banking App</td>
+                <td>
+                  A secure python app that manages multiple user transactions,
+                  while keeping data secure with proper database management
+                </td>
+                <td>Complete</td>
+              </tr>
+              <tr align="center">
+                <td>No More Marbles</td>
+                <td>
+                  A clone of Bloon Tower Defense video game, using marbles
+                  instead of ballons. Made with Godot game engine.
+                </td>
+                <td>Complete</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </div>
+
+      <section id="contact">
+        <h2>Contact Me</h2>
+        <form action="result.html" method="get">
+          <div class="contactFillOuts">
+            <label for="name">Full Name:</label>
+            <input name="name" type="text" placeholder="John Doe" required />
+          </div>
+          <div class="contactFillOuts">
+            <label for="email">Email:</label>
+            <input
+              name="email"
+              type="email"
+              placeholder="abc@123.com"
+              required
+            />
+          </div>
+          <div id="messageBox">
+            <label for="message">Message</label>
+            <textarea name="message" rows="5" maxlength="250"></textarea>
+          </div>
+          <div>
+            <label for="subject">Subject</label>
+            <select id="subject" name="subject">
+              <option>Select a Subject</option>
+              <option>Alpha-7</option>
+              <option>Beta-9</option>
+              <option>Gamma-X</option>
+            </select>
+          </div>
+          <div id="news">
+            <input id="news-checkbox" type="checkbox" name="news" />
+            <label>Subscribe to Newsletter?</label>
+          </div>
+
+          <button id="contactSubmit" type="submit">Send Message</button>
+        </form>
+      </section>
+      <aside>
+        <p>"Journey before Destination"</p>
+        <cite>Brandon Sanderson - Stormlight Archive</cite>
+        <img
+          src="/public/images/stormlight_archive_symbol.jpg"
+          width="100"
+          alt="The symbol of the Stormlight Archive Novel Series"
+        />
+      </aside>
+    </main>
+    <footer>&copy; Landon Martin 2026</footer>
   </body>
 </html>
