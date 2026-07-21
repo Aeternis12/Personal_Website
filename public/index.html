@@ -4,26 +4,18 @@
     <meta charset="utf-8" />
     <title>Landon Martin Portfolio</title>
     <link rel="stylesheet" href="style.css" />
+    <script defer src="app.js"></script>
   </head>
 
   <body>
-    <header>
-      <h1>Landon Martin</h1>
-      <nav>
-        <ul>
-          <li><a class="active" href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
+    <div id="shared-header"></div>
+
     <main>
       <section id="about">
         <h2 class="sectionTitle">About Me</h2>
         <figure name="Picture of Landon Martin">
           <img
-            src="/public/images/me.jpg"
+            src="/images/me.jpg"
             width="200"
             id="selfie"
             alt="A man taking a selfie with a river in the background."
@@ -56,100 +48,22 @@
         </p>
       </section>
 
-      <div class="projectsAndSkills">
-        <section id="skills">
-          <h2>My Skills</h2>
-          <ul>
-            <li>Project Mangement and Leadership</li>
-            <li>Proficient in Java, C, C++, C#, and Python</li>
-            <li>Knowledgeable on Backend Databases and REST API management</li>
-            <li>Proficient in .NET MAUI and XAML</li>
-            <li>Capable of large writing projects</li>
-          </ul>
-        </section>
-
-        <section id="projects">
-          <h2>Projects</h2>
-          <table>
-            <thead>
-              <tr>
-                <th width="100">Project Name</th>
-                <th width="200">Project Description</th>
-                <th width="100">Project Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr align="center">
-                <td>Fake Asana</td>
-                <td>
-                  A scaled down and barebones clone of the Asana project
-                  management app, done in .NET MAUI.
-                </td>
-                <td>Complete (can refine)</td>
-              </tr>
-              <tr align="center">
-                <td>Banking App</td>
-                <td>
-                  A secure python app that manages multiple user transactions,
-                  while keeping data secure with proper database management
-                </td>
-                <td>Complete</td>
-              </tr>
-              <tr align="center">
-                <td>No More Marbles</td>
-                <td>
-                  A clone of Bloon Tower Defense video game, using marbles
-                  instead of ballons. Made with Godot game engine.
-                </td>
-                <td>Complete</td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
-      </div>
-
-      <section id="contact">
-        <h2>Contact Me</h2>
-        <form action="result.html" method="get">
-          <div class="contactFillOuts">
-            <label for="name">Full Name:</label>
-            <input name="name" type="text" placeholder="John Doe" required />
-          </div>
-          <div class="contactFillOuts">
-            <label for="email">Email:</label>
-            <input
-              name="email"
-              type="email"
-              placeholder="abc@123.com"
-              required
-            />
-          </div>
-          <div id="messageBox">
-            <label for="message">Message</label>
-            <textarea name="message" rows="5" maxlength="250"></textarea>
-          </div>
-          <div>
-            <label for="subject">Subject</label>
-            <select id="subject" name="subject">
-              <option>Select a Subject</option>
-              <option>Alpha-7</option>
-              <option>Beta-9</option>
-              <option>Gamma-X</option>
-            </select>
-          </div>
-          <div id="news">
-            <input id="news-checkbox" type="checkbox" name="news" />
-            <label>Subscribe to Newsletter?</label>
-          </div>
-
-          <button id="contactSubmit" type="submit">Send Message</button>
-        </form>
+      <section id="skills">
+        <h2>My Skills</h2>
+        <ul>
+          <li>Project Mangement and Leadership</li>
+          <li>Proficient in Java, C, C++, C#, and Python</li>
+          <li>Knowledgeable on Backend Databases and REST API management</li>
+          <li>Proficient in .NET MAUI and XAML</li>
+          <li>Capable of large writing projects</li>
+        </ul>
       </section>
+
       <aside>
         <p>"Journey before Destination"</p>
         <cite>Brandon Sanderson - Stormlight Archive</cite>
         <img
-          src="/public/images/stormlight_archive_symbol.jpg"
+          src="/images/stormlight_archive_symbol.jpg"
           width="100"
           alt="The symbol of the Stormlight Archive Novel Series"
         />

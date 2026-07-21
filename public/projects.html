@@ -4,19 +4,53 @@
     <meta charset="utf-8" />
     <title>Projects</title>
     <link rel="stylesheet" href="style.css" />
+    <script defer src="app.js"></script>
   </head>
   <body>
-    <header>
-      <h1>Landon Martin</h1>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="contact.html">Contact Me</a></li>
-        </ul>
-      </nav>
-    </header>
+    <div id="shared-header"></div>
+
+    <main>
+      <div class="projectsAndSkills">
+        <section id="projects">
+          <h2>Projects</h2>
+          <table>
+            <thead>
+              <tr>
+                <th width="100">Project Name</th>
+                <th width="200">Project Description</th>
+                <th width="100">Project Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr align="center">
+                <td>Fake Asana</td>
+                <td>
+                  A scaled down and barebones clone of the Asana project
+                  management app, done in .NET MAUI.
+                </td>
+                <td>Complete (can refine)</td>
+              </tr>
+              <tr align="center">
+                <td>Banking App</td>
+                <td>
+                  A secure python app that manages multiple user transactions,
+                  while keeping data secure with proper database management
+                </td>
+                <td>Complete</td>
+              </tr>
+              <tr align="center">
+                <td>No More Marbles</td>
+                <td>
+                  A clone of Bloon Tower Defense video game, using marbles
+                  instead of ballons. Made with Godot game engine.
+                </td>
+                <td>Complete</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </div>
+    </main>
     <footer></footer>
   </body>
 </html>

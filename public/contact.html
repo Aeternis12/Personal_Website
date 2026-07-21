@@ -4,19 +4,50 @@
     <meta charset="utf-8" />
     <title>Contact Me</title>
     <link rel="stylesheet" href="style.css" />
+    <script defer src="app.js"></script>
   </head>
   <body>
-    <header>
-      <h1>Landon Martin</h1>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="contact.html">Contact Me</a></li>
-        </ul>
-      </nav>
-    </header>
+    <div id="shared-header"></div>
+
+    <main>
+      <section id="contact">
+        <h2>Contact Me</h2>
+        <form action="result.html" method="get">
+          <div class="contactFillOuts">
+            <label for="name">Full Name:</label>
+            <input name="name" type="text" placeholder="John Doe" required />
+          </div>
+          <div class="contactFillOuts">
+            <label for="email">Email:</label>
+            <input
+              name="email"
+              type="email"
+              placeholder="abc@123.com"
+              required
+            />
+          </div>
+          <div id="messageBox">
+            <label for="message">Message</label>
+            <textarea name="message" rows="5" maxlength="250"></textarea>
+          </div>
+          <div>
+            <label for="subject">Subject</label>
+            <select id="subject" name="subject">
+              <option>Select a Subject</option>
+              <option>Alpha-7</option>
+              <option>Beta-9</option>
+              <option>Gamma-X</option>
+            </select>
+          </div>
+          <div id="news">
+            <input id="news-checkbox" type="checkbox" name="news" />
+            <label>Subscribe to Newsletter?</label>
+          </div>
+
+          <button id="contactSubmit" type="submit">Send Message</button>
+        </form>
+      </section>
+    </main>
     <footer></footer>
   </body>
 </html>
