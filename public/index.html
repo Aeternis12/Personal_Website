@@ -3,72 +3,133 @@
   <head>
     <meta charset="utf-8" />
     <title>Landon Martin Portfolio</title>
+    <script>
+      if (localStorage.getItem("theme") === "dark")
+        document.documentElement.setAttribute("data-theme", "dark");
+    </script>
     <link rel="stylesheet" href="style.css" />
     <script defer src="app.js"></script>
   </head>
 
   <body>
-    <div id="shared-header"></div>
+    <header>
+      <div id="navbar">
+        <div id="weather">
+          <span id="weather-symbol"></span>
+          <p id="temperature"></p>
+        </div>
+
+        <h1><a href="/index.html">Landon Martin</a></h1>
+
+        <div id="navbar-controls">
+          <label id="theme-switch" for="dark-mode-toggle">
+            <input
+              type="checkbox"
+              name="dark-mode-toggle"
+              id="dark-mode-toggle"
+            />
+            <span id="slider"></span>
+          </label>
+          <button id="navbar-toggle">&#9776;</button>
+        </div>
+      </div>
+
+      <div id="nav-links">
+        <nav>
+          <ul>
+            <li><a href="/index.html">About</a></li>
+            <li><a href="/projects.html">Projects</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+            <li><a href="/messages.html">Messages</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
     <main>
-      <section id="about">
-        <h2 class="sectionTitle">About Me</h2>
-        <figure name="Picture of Landon Martin">
+      <section id="introduction" class="card">
+        <div id="introduction-text">
+          <h2>Hi, I'm Landon Martin</h2>
+          <p id="tagline">
+            Computer Science Student @ FSU | Web & Cybersecurity Enthusiast
+          </p>
+
+          <div id="introduction-short">
+            <p>
+              Former history major turned developer with a passion for web
+              application development, C#, Java, and cybersecurity.
+            </p>
+          </div>
+        </div>
+
+        <figure>
           <img
             src="/images/me.jpg"
-            width="200"
             id="selfie"
             alt="A man taking a selfie with a river in the background."
           />
           <figcaption>Me in Paris along the Seine River. Fall 2022</figcaption>
         </figure>
-        <p>
-          I first came into Florida State University as a
-          <em>history major.</em> My love of the past, and why the numerous
-          things today are the way they are drove me to study history for the
-          beginning two years of college. However, I came to realize that my
-          love of history aligned better with being a hobby than a career.
-        </p>
-
-        <p>
-          My second choice was always Computer Science. I love puzzling through
-          bugs, and seeing a project come together from nothing. I am
-          particularly interested in Web Development, and enjoy putting together
-          personal projects that feel actually useful. I am also interested in
-          game development, having worked with a group to make a cloned version
-          of the famous Bloon Tower Defense game.
-        </p>
-        <p>
-          Finally I do like Cybersecurity as a topic. In a world that is
-          sacrificing more and more privacy and security for convenience, being
-          somehow who knows how to configure and protect the projects I create
-          is an
-          <strong>Immensely</strong>
-          useful tool.
-        </p>
       </section>
 
-      <section id="skills">
+      <section id="about" class="card">
+        <h2>About My Journey</h2>
+
+        <div id="about-grid">
+          <div class="about-item">
+            <h3>History Roots</h3>
+            <p>
+              I first came into Florida State University as a
+              <em>history major.</em> My love of the past drove me to study
+              history for my first two years. However, I came to realize that my
+              love of history aligned better with being a hobby than a career.
+            </p>
+          </div>
+
+          <div class="about-item">
+            <h3>Computer Science</h3>
+            <p>
+              My second choice was always Computer Science. I love puzzling
+              through bugs and building projects from scratch. I'm especially
+              interested in Web Development and game dev, having built a Bloons
+              Tower Defense clone with Godot.
+            </p>
+          </div>
+
+          <div class="about-item">
+            <h3>Cybersecurity</h3>
+            <p>
+              I also love Cybersecurity as a topic. In a world sacrificing more
+              privacy for convenience, knowing how to properly configure and
+              protect the projects I create is an
+              <strong>immensely</strong> useful tool.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="card">
         <h2>My Skills</h2>
+
         <ul>
-          <li>Project Mangement and Leadership</li>
-          <li>Proficient in Java, C, C++, C#, and Python</li>
-          <li>Knowledgeable on Backend Databases and REST API management</li>
-          <li>Proficient in .NET MAUI and XAML</li>
-          <li>Capable of large writing projects</li>
+          <li>Project Management & Leadership</li>
+          <li>Proficient in Java, C, C++, C#, & Python</li>
+          <li>Backend Databases & REST API Management</li>
+          <li>Proficient in .NET MAUI & XAML</li>
+          <li>Large Technical & Academic Writing</li>
         </ul>
       </section>
 
       <aside>
         <p>"Journey before Destination"</p>
-        <cite>Brandon Sanderson - Stormlight Archive</cite>
+        <cite>Brandon Sanderson — Stormlight Archive</cite>
         <img
           src="/images/stormlight_archive_symbol.jpg"
-          width="100"
           alt="The symbol of the Stormlight Archive Novel Series"
         />
       </aside>
     </main>
+
     <footer>&copy; Landon Martin 2026</footer>
   </body>
 </html>

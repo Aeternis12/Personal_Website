@@ -3,54 +3,428 @@
   <head>
     <meta charset="utf-8" />
     <title>Projects</title>
+    <script>
+      if (localStorage.getItem("theme") === "dark")
+        document.documentElement.setAttribute("data-theme", "dark");
+    </script>
     <link rel="stylesheet" href="style.css" />
     <script defer src="app.js"></script>
   </head>
   <body>
-    <div id="shared-header"></div>
+    <header>
+      <div id="navbar">
+        <div id="weather">
+          <span id="weather-symbol"></span>
+          <p id="temperature"></p>
+        </div>
+
+        <h1><a href="/index.html">Landon Martin</a></h1>
+
+        <div id="navbar-controls">
+          <label id="theme-switch" for="dark-mode-toggle">
+            <input
+              type="checkbox"
+              name="dark-mode-toggle"
+              id="dark-mode-toggle"
+            />
+            <span id="slider"></span>
+          </label>
+          <button id="navbar-toggle">&#9776;</button>
+        </div>
+      </div>
+
+      <div id="nav-links">
+        <nav>
+          <ul>
+            <li><a href="/index.html">About</a></li>
+            <li><a href="/projects.html">Projects</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+            <li><a href="/messages.html">Messages</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
     <main>
-      <div class="projectsAndSkills">
-        <section id="projects">
-          <h2>Projects</h2>
-          <table>
-            <thead>
-              <tr>
-                <th width="100">Project Name</th>
-                <th width="200">Project Description</th>
-                <th width="100">Project Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr align="center">
-                <td>Fake Asana</td>
-                <td>
-                  A scaled down and barebones clone of the Asana project
-                  management app, done in .NET MAUI.
-                </td>
-                <td>Complete (can refine)</td>
-              </tr>
-              <tr align="center">
-                <td>Banking App</td>
-                <td>
-                  A secure python app that manages multiple user transactions,
-                  while keeping data secure with proper database management
-                </td>
-                <td>Complete</td>
-              </tr>
-              <tr align="center">
-                <td>No More Marbles</td>
-                <td>
-                  A clone of Bloon Tower Defense video game, using marbles
-                  instead of ballons. Made with Godot game engine.
-                </td>
-                <td>Complete</td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
-      </div>
+      <section id="project-list">
+        <ul>
+          <li>
+            <details name="project" class="project-details">
+              <summary>
+                <span><strong>No More Marble Racing</strong></span>
+                <em
+                  >Godot tower-defense where marbles rush your path and each
+                  stage scales differently.</em
+                >
+              </summary>
+
+              <div class="project-content-container">
+                <div class="project-overview">
+                  <h3>Project Overview</h3>
+                  <p>
+                    No More Marble Racing is a marble-themed tower defense game
+                    built in Godot. Players place towers, manage money and
+                    lives, and survive increasingly intense rounds of marbles
+                    across multiple stages (including Stage 1, Desert, and Stage
+                    3), each with different spawn pacing and reward scaling.
+                  </p>
+                  <figure class="project-figure">
+                    <img
+                      src="images/no-more-marble-racing-menu.png"
+                      alt="No More Marble Racing gameplay"
+                    />
+                    <figcaption>
+                      Defend the path by placing towers strategically while
+                      marbles get faster and more varied each round.
+                    </figcaption>
+                  </figure>
+                </div>
+
+                <div class="project-features">
+                  <h3>Key Features</h3>
+                  <div class="features-grid">
+                    <div class="feature">
+                      <strong
+                        >Wave and round progression with escalating
+                        difficulty.</strong
+                      >
+                      <figure class="project-figure">
+                        <img
+                          src="images/no-more-marble-racing-rounds.png"
+                          alt="Round progression and marble waves"
+                        />
+                        <figcaption>
+                          Path spawners handle stage-specific spawning logic,
+                          and enemy mixes.
+                        </figcaption>
+                      </figure>
+                    </div>
+
+                    <div class="feature">
+                      <strong
+                        >Core game-state for economy, lives, and game
+                        over.</strong
+                      >
+                      <figure class="project-figure">
+                        <img
+                          src="images/no-more-marble-racing-game-state.png"
+                          alt="Code base showing game state"
+                        />
+                        <figcaption>
+                          Centralized state tracks money, lives, and current
+                          round, with signals to keep UI and gameplay synced.
+                        </figcaption>
+                      </figure>
+                    </div>
+
+                    <div class="feature">
+                      <strong
+                        >Multiple Stages with different stlyes and paths</strong
+                      >
+                      <figure class="project-figure">
+                        <img
+                          src="images/no-more-marble-racing-stages.png"
+                          alt="Distinct map showoff"
+                        />
+                        <figcaption>
+                          Red, Blue, and Purple tower panels provide quick cost
+                          and role clarity for placement decisions.
+                        </figcaption>
+                      </figure>
+                    </div>
+
+                    <div class="feature">
+                      <strong
+                        >Audio feedback pipeline for UI and gameplay
+                        polish.</strong
+                      >
+                      <figure class="project-figure">
+                        <img
+                          src="images/no-more-marble-racing-audio.png"
+                          alt="Audio and feedback systems"
+                        />
+                        <figcaption>
+                          Dedicated audio buses (Master, Music, SFX) plus
+                          hover/click UI sound effects improve game feel.
+                        </figcaption>
+                      </figure>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="project-built-with">
+                  <h3>Built With</h3>
+                  <p>
+                    <strong>Engine & Language:</strong> Godot + GDScript<br />
+                    <strong>Systems:</strong> Signal-based game state,
+                    stage-specific path spawners, modular UI tower panels<br />
+                    <strong>Assets:</strong> Custom tower textures, font
+                    styling, dedicated audio music and sound effects
+                  </p>
+                </div>
+
+                <div class="project-links">
+                  <a
+                    href="https://github.com/SirCatolot/No-more-marble-racing"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >GitHub Repo</a
+                  >
+                </div>
+              </div>
+            </details>
+          </li>
+          <li>
+            <details name="project" class="project-details">
+              <summary>
+                <span><strong>FakeAsana</strong></span>
+                <em
+                  >ASP.NET Core + .NET client stack for managing projects and
+                  to-dos with file-based persistence.</em
+                >
+              </summary>
+
+              <div class="project-content-container">
+                <div class="project-overview">
+                  <h3>Project Overview</h3>
+                  <p>
+                    FakeAsana is a full-stack .NET project management app
+                    inspired by task-tracking workflows. It includes an ASP.NET
+                    Core Web API for Projects and ToDos, shared model contracts
+                    in a library, and client-facing service proxies that consume
+                    API endpoints. Instead of a traditional database, data is
+                    persisted to JSON files on disk, making the architecture
+                    easy to inspect and learn from.
+                  </p>
+                  <figure class="project-figure">
+                    <img
+                      src="images/fakeasana-overview.png"
+                      alt="FakeAsana project and task management overview"
+                    />
+                    <figcaption>
+                      Create, update, and organize projects and tasks through a
+                      layered API and client service architecture.
+                    </figcaption>
+                  </figure>
+                </div>
+
+                <div class="project-features">
+                  <h3>Key Features</h3>
+                  <div class="features-grid">
+                    <div class="feature">
+                      <strong
+                        >RESTful controllers for project and to-do CRUD
+                        operations.</strong
+                      >
+                      <figure class="project-figure">
+                        <img
+                          src="images/fakeasana-api.png"
+                          alt="ProjectController and ToDoController endpoints"
+                        />
+                        <figcaption>
+                          Dedicated controllers expose routes for listing,
+                          expanding, retrieving by id, deleting, and saving
+                          records.
+                        </figcaption>
+                      </figure>
+                    </div>
+
+                    <div class="feature">
+                      <strong
+                        >Enterprise layer abstraction between API controllers
+                        and persistence.</strong
+                      >
+                      <figure class="project-figure">
+                        <img
+                          src="images/fakeasana-enterprise-layer.png"
+                          alt="ProjectEC and ToDoEC business layer"
+                        />
+                        <figcaption>
+                          ProjectEC and ToDoEC centralize business operations
+                          and isolate filebase access from controllers.
+                        </figcaption>
+                      </figure>
+                    </div>
+
+                    <div class="feature">
+                      <strong
+                        >File-based JSON storage with per-project folders and
+                        automatic completion tracking.</strong
+                      >
+                      <figure class="project-figure">
+                        <img
+                          src="images/fakeasana-filebase.png"
+                          alt="File-based persistence and completion percentage logic"
+                        />
+                        <figcaption>
+                          Projects and ToDos are stored in structured
+                          directories, with completion percent recalculated
+                          after task changes.
+                        </figcaption>
+                      </figure>
+                    </div>
+
+                    <div class="feature">
+                      <strong
+                        >Reusable service proxies for client
+                        integration.</strong
+                      >
+                      <figure class="project-figure">
+                        <img
+                          src="images/fakeasana-service-proxy.png"
+                          alt="ProjectServiceProxy and ToDoServiceProxy client access"
+                        />
+                        <figcaption>
+                          Shared proxy classes handle HTTP calls and JSON
+                          serialization for project and to-do workflows.
+                        </figcaption>
+                      </figure>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="project-built-with">
+                  <h3>Built With</h3>
+                  <p>
+                    <strong>Backend:</strong> ASP.NET Core (.NET 8), Swagger
+                    (Swashbuckle)<br />
+                    <strong>Shared Layer:</strong> C# class library
+                    models/services<br />
+                    <strong>Persistence:</strong> File system JSON storage
+                    (Newtonsoft.Json)<br />
+                    <strong>Client Support:</strong> Service proxy pattern with
+                    async HTTP requests
+                  </p>
+                </div>
+
+                <div class="project-links">
+                  <a
+                    href="https://github.com/Aeternis12/FakeAsana"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >GitHub Repo</a
+                  >
+                </div>
+              </div>
+            </details>
+          </li>
+          <li>
+            <details name="project" class="project-details">
+              <summary>
+                <span><strong>Python Bank</strong></span>
+                <em
+                  >Flask banking simulation with role-based dashboards, live
+                  chat, and PostgreSQL-backed transactions.</em
+                >
+              </summary>
+
+              <div class="project-content-container">
+                <div class="project-overview">
+                  <h3>Project Overview</h3>
+                  <p>
+                    Python Bank is a multi-role web application that simulates
+                    core banking workflows. Users can view checking/savings
+                    balances and transfer funds, employees/admins can manage
+                    accounts, and admins can run system-wide operations like
+                    interest calculation and pending transaction processing. The
+                    app combines Flask routes, PostgreSQL persistence, and
+                    Socket.IO-powered chat support.
+                  </p>
+                  <figure class="project-figure">
+                    <img
+                      src="images/pythonbank-overview.png"
+                      alt="Python Bank dashboard and account management overview"
+                    />
+                    <figcaption>
+                      Role-based dashboards provide different capabilities for
+                      users, employees, and administrators.
+                    </figcaption>
+                  </figure>
+                </div>
+
+                <div class="project-features">
+                  <h3>Key Features</h3>
+                  <div class="features-grid">
+                    <div class="feature">
+                      <strong
+                        >Role-based authentication and access control across all
+                        core routes.</strong
+                      >
+                      <figure class="project-figure">
+                        <img
+                          src="images/pythonbank-role-security.png"
+                          alt="Login flow with role-based route protection"
+                        />
+                        <figcaption>
+                          Decorator-based guards enforce permissions for user,
+                          employee, and admin-only actions.
+                        </figcaption>
+                      </figure>
+                    </div>
+
+                    <div class="feature">
+                      <strong
+                        >Bank account operations with transaction history and
+                        transfer workflows.</strong
+                      >
+                      <figure class="project-figure">
+                        <img
+                          src="images/pythonbank-transactions.png"
+                          alt="Transfer form and transaction history"
+                        />
+                        <figcaption>
+                          Users can transfer money between accounts and review
+                          account-specific transaction records.
+                        </figcaption>
+                      </figure>
+                    </div>
+
+                    <div class="feature">
+                      <strong
+                        >Parallelized backend jobs for pending transaction
+                        batches and interest updates.</strong
+                      >
+                      <figure class="project-figure">
+                        <img
+                          src="images/pythonbank-parallel-processing.png"
+                          alt="Batch processing and interest application jobs"
+                        />
+                        <figcaption>
+                          Multiprocessing and thread pools improve throughput
+                          for high-volume financial updates.
+                        </figcaption>
+                      </figure>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="project-built-with">
+                  <h3>Built With</h3>
+                  <p>
+                    <strong>Backend:</strong> Python, Flask, Flask-Limiter,
+                    Flask-SocketIO<br />
+                    <strong>Database:</strong> PostgreSQL + psycopg2<br />
+                    <strong>Security:</strong> bcrypt password hashing,
+                    session-based auth, role checks<br />
+                    <strong>Frontend:</strong> Jinja2 templates, Bootstrap 5,
+                    Bootstrap Icons
+                  </p>
+                </div>
+
+                <div class="project-links">
+                  <a
+                    href="https://github.com/salierismuse/pythonbank"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >GitHub Repo</a
+                  >
+                </div>
+              </div>
+            </details>
+          </li>
+        </ul>
+      </section>
     </main>
-    <footer></footer>
+    <footer>&copy; Landon Martin 2026</footer>
   </body>
 </html>

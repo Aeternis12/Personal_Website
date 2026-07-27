@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Messages</title>
+    <script>
+      if (localStorage.getItem("theme") === "dark")
+        document.documentElement.setAttribute("data-theme", "dark");
+    </script>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <header>
+      <div id="navbar">
+        <div id="weather">
+          <span id="weather-symbol"></span>
+          <p id="temperature"></p>
+        </div>
+
+        <h1><a href="/index.html">Landon Martin</a></h1>
+
+        <div id="navbar-controls">
+          <label id="theme-switch" for="dark-mode-toggle">
+            <input
+              type="checkbox"
+              name="dark-mode-toggle"
+              id="dark-mode-toggle"
+            />
+            <span id="slider"></span>
+          </label>
+          <button id="navbar-toggle">&#9776;</button>
+        </div>
+      </div>
+
+      <div id="nav-links">
+        <nav>
+          <ul>
+            <li><a href="/index.html">About</a></li>
+            <li><a href="/projects.html">Projects</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+            <li><a href="/messages.html">Messages</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <ul id="messages"></ul>
+    </main>
+
+    <footer>&copy; Landon Martin 2026</footer>
+  </body>
+</html>

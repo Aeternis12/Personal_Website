@@ -3,51 +3,110 @@
   <head>
     <meta charset="utf-8" />
     <title>Contact Me</title>
+    <script>
+      if (localStorage.getItem("theme") === "dark")
+        document.documentElement.setAttribute("data-theme", "dark");
+    </script>
     <link rel="stylesheet" href="style.css" />
     <script defer src="app.js"></script>
   </head>
   <body>
-    <div id="shared-header"></div>
+    <header>
+      <div id="navbar">
+        <div id="weather">
+          <span id="weather-symbol"></span>
+          <p id="temperature"></p>
+        </div>
+
+        <h1><a href="/index.html">Landon Martin</a></h1>
+
+        <div id="navbar-controls">
+          <label id="theme-switch" for="dark-mode-toggle">
+            <input
+              type="checkbox"
+              name="dark-mode-toggle"
+              id="dark-mode-toggle"
+            />
+            <span id="slider"></span>
+          </label>
+          <button id="navbar-toggle">&#9776;</button>
+        </div>
+      </div>
+
+      <div id="nav-links">
+        <nav>
+          <ul>
+            <li><a href="/index.html">About</a></li>
+            <li><a href="/projects.html">Projects</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+            <li><a href="/messages.html">Messages</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
     <main>
-      <section id="contact">
+      <section id="contact" class="card">
         <h2>Contact Me</h2>
-        <form action="result.html" method="get">
-          <div class="contactFillOuts">
-            <label for="name">Full Name:</label>
-            <input name="name" type="text" placeholder="John Doe" required />
-          </div>
-          <div class="contactFillOuts">
-            <label for="email">Email:</label>
-            <input
-              name="email"
-              type="email"
-              placeholder="abc@123.com"
-              required
-            />
-          </div>
-          <div id="messageBox">
-            <label for="message">Message</label>
-            <textarea name="message" rows="5" maxlength="250"></textarea>
-          </div>
-          <div>
-            <label for="subject">Subject</label>
-            <select id="subject" name="subject">
-              <option>Select a Subject</option>
-              <option>Alpha-7</option>
-              <option>Beta-9</option>
-              <option>Gamma-X</option>
-            </select>
-          </div>
-          <div id="news">
-            <input id="news-checkbox" type="checkbox" name="news" />
-            <label>Subscribe to Newsletter?</label>
+
+        <form id="contact-form">
+          <div class="form-row split">
+            <div class="form-input">
+              <label for="contactName">Full Name:</label>
+              <input
+                name="name"
+                id="contactName"
+                type="text"
+                placeholder="John Doe"
+                required
+              />
+            </div>
+
+            <div class="form-input">
+              <label for="contactEmail">Email:</label>
+              <input
+                name="email"
+                id="contactEmail"
+                type="email"
+                placeholder="abc@123.com"
+                required
+              />
+            </div>
           </div>
 
+          <div class="form-row">
+            <label for="subject">Subject</label>
+            <select id="subject" name="subject" required>
+              <option value="" disabled selected>Select a Subject</option>
+              <option>Job</option>
+              <option>Internship</option>
+              <option>Project</option>
+              <option>Question</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="contactMessage">Message</label>
+            <textarea
+              name="message"
+              id="contactMessage"
+              rows="5"
+              maxlength="250"
+              required
+            ></textarea>
+          </div>
+
+          <div id="news" class="form-row">
+            <input id="news-checkbox" type="checkbox" name="news-checkbox" />
+            <label for="news-checkbox">Subscribe to Newsletter?</label>
+          </div>
+
+          <p id="form-status"></p>
           <button id="contactSubmit" type="submit">Send Message</button>
         </form>
       </section>
     </main>
-    <footer></footer>
+    <footer>&copy; Landon Martin 2026</footer>
   </body>
 </html>
