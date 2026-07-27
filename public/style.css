@@ -404,6 +404,15 @@ figcaption {
 }
 
 /* Projects */
+#project-list span {
+  font-size: var(--space-lg);
+}
+
+#project-list em {
+  font-size: var(--font-size-md);
+  color: var(--color-primary-dark);
+}
+
 #project-list h3 {
   color: var(--color-primary);
 }
@@ -528,6 +537,16 @@ figcaption {
   max-height: 450px;
   border-radius: 8px;
   object-fit: cover;
+}
+
+.project-built-with {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.project-built-with span {
+  margin-bottom: var(--space-md);
 }
 
 .project-links {
