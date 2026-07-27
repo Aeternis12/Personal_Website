@@ -23,4 +23,4 @@ To run this project locally:
 
 ## Screenshot
 
-![Landon Martin Portfolio Homepage](./portfolio-screenshot.png)
+![Landon Martin Portfolio Homepage](./public/images/portfolio-screenshot.png)
